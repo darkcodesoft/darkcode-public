@@ -1,0 +1,12 @@
+@keyframes animate {
+  from {
+    r: 0px;
+  }
+  to {
+    r: 200px;
+  }
+}
+
+.circle {
+  animation: animate .5s ease-in-out;
+}

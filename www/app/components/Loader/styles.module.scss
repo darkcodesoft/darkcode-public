@@ -1,0 +1,72 @@
+$size: 40px;
+$color: rgba(255,255,255,.5);
+
+.root {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 10;
+	margin-left: -$size/2;
+	margin-top: -$size/2;
+	width: $size;
+	height: $size;
+	line-height: $size;
+	font-size: 25px;
+	text-align: center;
+	transform-style: preserve-3d;
+	animation: flip3d 2.2s infinite forwards;
+}
+
+.side {
+	position: absolute;
+	width: $size;
+	height: $size;
+	background: transparent;
+	color: $color;
+	border: 1px solid $color;
+}
+
+.front {
+	transform: translate3d(0, 0, 40px);
+}
+
+.back {
+	transform: rotateY(180deg) translate3d(0, 0, 40px);
+}
+
+.top {
+	transform: rotateX(90deg) translate3d(0, 0, 40px);
+}
+
+.bottom {
+	transform: rotateX(-90deg) translate3d(0, 0, 40px);
+}
+
+.right {
+	transform: rotateY(90deg) translate3d(0, 0, 40px);
+}
+
+.left {
+	transform: rotateY(-90deg) translate3d(0, 0, 40px);
+}
+
+@keyframes flip3d {
+	0% {
+		transform: rotateY(0deg) rotateZ(0deg);
+	}
+	20% {
+		transform: rotateY(90deg) rotateZ(0deg);
+	}
+	40% {
+		transform: rotateX(45deg) rotateZ(45deg);
+	}
+	60% {
+		transform: rotateX(90deg) rotateY(180deg) rotateX(90deg);
+	}
+	80% {
+		transform: rotateX(310deg) rotateZ(230deg);
+	}
+	100% {
+		transform: rotateX(360deg) rotateZ(360deg);
+	}
+}
